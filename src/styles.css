@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #b77202;
+  background: linear-gradient(0deg, #b77202, #fcdfc7);
+  background-attachment: fixed;
+}
+.appLabel {
+  text-shadow: 3px 3px gray;
+}
+.compareBtn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 8px;
+}
+.compareBtn:hover {
+  background-color: rgb(122, 121, 121);
+  color: black;
+  cursor: pointer;
+}
+.compare-container {
+  max-width: 900px;
+  margin: auto;
+  text-align: center;
+}
+
+.uploads {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.upload-block {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.preview {
+  /* max-width: 100%; */
+  width: 200px;
+  height: 200px;
+  margin-top: 0.5rem;
+  border: 3px solid transparent;
+  border-radius: 8px;
+  transition:
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.portraitLabel {
+  text-decoration: overline;
+}
+
+.winner {
+  /* border-color: gold;
+  box-shadow: 0 0 15px gold; */
+  border-color: rgb(7, 170, 56);
+  box-shadow: 0 0 15px rgb(66, 197, 83);
+}
+
+.actions {
+  margin-top: 1rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.results {
+  margin-top: 1.5rem;
+}
+
+.reset-btn {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.reset-btn:hover {
+  background: darkred;
+}
