@@ -7,6 +7,13 @@ body {
 .appLabel {
   text-shadow: 3px 3px gray;
 }
+.headerDiv {
+  display: flex;
+  justify-content: center;
+}
+.logoImg {
+  padding-top: 8px;
+}
 .compareBtn {
   background-color: black;
   color: white;
@@ -36,6 +43,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 8px auto;
 }
 
 .preview {
@@ -51,7 +59,8 @@ body {
 }
 
 .portraitLabel {
-  text-decoration: overline;
+  border: 1px solid brown;
+  padding: 6px;
 }
 
 .winner {

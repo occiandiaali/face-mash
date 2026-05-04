@@ -6,6 +6,7 @@ import {
   symmetryScore,
   ageGuess,
 } from "../services/faceService";
+import logoImg from "../assets/fm-logo.png";
 
 export default {
   img1: null,
@@ -65,6 +66,8 @@ export default {
     this.winnerMap = {};
     this.img1Pts = 0;
     this.img2Pts = 0;
+
+    this.comparing = true;
 
     if (this.doResemblance) {
       const sim = await compareFaces(this.img1, this.img2);
@@ -140,8 +143,9 @@ export default {
       }
     }
 
-    console.log("Result >>> ");
-    console.log(JSON.stringify(this.winnerMap));
+    // console.log("Result >>> ");
+    // console.log(JSON.stringify(this.winnerMap));
+    this.comparing = false;
 
     m.redraw();
   },
@@ -163,8 +167,21 @@ export default {
 
   view() {
     return m("div.compare-container", [
-      m("h2.appLabel", "Face Mash"),
-
+      m("div.headerDiv", [
+        m("img.logoImg", {
+          src: `${logoImg}`,
+          width: "48",
+          height: "48",
+          alt: "Logo",
+        }),
+        m("h2.appLabel", "Face Mash"),
+      ]),
+      m(
+        "span",
+        { style: "font-size:x-small;color:green;" },
+        "Billionaire vibes always get the GREEN highlight..",
+      ),
+      m("hr"),
       m("div.uploads", [
         m("div.upload-block", [
           m("input[type=file]", {
@@ -239,9 +256,10 @@ export default {
           m(
             "button.compareBtn",
             {
+              disabled: this.comparing,
               onclick: () => this.runSelectedComparisons(),
             },
-            "Run Comparison",
+            this.comparing ? "Comparing.." : "Run Comparison",
           ),
           m("button.reset-btn", { onclick: () => this.resetAll() }, "Reset"),
         ]),
